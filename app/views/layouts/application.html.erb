@@ -13,6 +13,37 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+    <%= link_to "/cocktails", class: "navbar-brand" do %>
+      <%= image_tag "alcohol.png" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "See our Cocktails", "/cocktails", class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Add your own", "/cocktails/new", class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "red_glass_cropped.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': true %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to "Another action", "#", class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <%= yield %>
   </body>
 </html>
