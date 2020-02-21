@@ -7,15 +7,8 @@
 
     <% @cocktails.each do |cocktail| %>
     <div class="col-4 ">
-      <div class="card">
-        <div class="card-trip">
-          <%= cl_image_tag cocktail.picture.key, crop: :fill %>
-
-          <div class="card-trip-infos">
-            <h3><%= cocktail.name %></h3>
-            <p><%= link_to 'Show recipe', cocktail_path(cocktail) %></p>
-          </div>
-        </div>
+      <div class="card-trip" style="background-image: url('<%= cl_image_path cocktail.picture.key, crop: :fill %>')">
+        <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
       </div>
     </div>
     <% end %>
