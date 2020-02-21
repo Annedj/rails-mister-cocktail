@@ -7,11 +7,13 @@
 
     <% @cocktails.each do |cocktail| %>
     <div class="col-4 ">
-      <div class="card-trip">
-        <%= image_tag cocktail.image_url, alt: "Cocktail image", width: 200 %>
-        <div class="card-trip-infos">
-          <h3><%= cocktail.name %></h3>
-          <p><%= link_to 'Show recipe', cocktail_path(cocktail) %></p>
+      <div class="card">
+        <div class="card-trip">
+          <%= image_tag cocktail.image_url, alt: "Cocktail image", width: 200 %>
+          <div class="card-trip-infos">
+            <h3><%= cocktail.name %></h3>
+            <p><%= link_to 'Show recipe', cocktail_path(cocktail) %></p>
+          </div>
         </div>
       </div>
     </div>
